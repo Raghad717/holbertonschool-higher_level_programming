@@ -99,10 +99,5 @@ The script is **98 characters maximum**.
 
 ---
 
-##  How to Run
-```bash
-chmod +x filename.py
-./filename.py
-
 Author
 Raghad Almalki
