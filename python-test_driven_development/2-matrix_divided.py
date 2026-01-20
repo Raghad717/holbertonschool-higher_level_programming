@@ -33,7 +33,7 @@ def matrix_divided(matrix, div):
         if row_length is None:
             row_length = len(row)
         elif len(row) != row_length:
-            raise TypeError("matrix must have each row with the same size")
+            raise TypeError("Each row of the matrix must have the same size")  # FIXED capitalization
 
         new_row = []
         for element in row:
