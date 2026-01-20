@@ -13,15 +13,33 @@ def matrix_divided(matrix, div):
     div must be an integer or float and cannot be zero.
     The result is a new matrix with values rounded to 2 decimal places.
     """
+    # Check div first
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+
+    # Check matrix type
     if not isinstance(matrix, list) or matrix == []:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (array of arrays of integers/floats)")
 
     row_length = None
     new_matrix = []
 
     for row in matrix:
         if not isinstance(row, list) or row == []:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix (array of arrays of integers/floats)")
 
         if row_length is None:
             row_length = len(row)
+        elif len(row) != row_length:
+            raise TypeError("matrix must have each row with the same size")
+
+        new_row = []
+        for element in row:
+            if not isinstance(element, (int, float)):
+                raise TypeError("matrix must be a matrix (array of arrays of integers/floats)")
+            new_row.append(round(element / div, 2))
+        new_matrix.append(new_row)
+
+    return new_matrix
