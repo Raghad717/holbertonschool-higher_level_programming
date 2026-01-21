@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Function that prints a text with 2 new lines after ., ? and :
+Text Indentation Module
+Prints a text with 2 new lines after each '.', '?' or ':'.
 """
-
 
 def text_indentation(text):
     """
-    Prints a text with 2 new lines after ., ? and :
+    Prints a text with 2 new lines after '.', '?', or ':'.
 
     Args:
         text (str): The text to format.
@@ -21,8 +21,8 @@ def text_indentation(text):
 
     for char in text:
         if char in ".?:":
-            print(char, end="")
-            print("\n")
+            # Print punctuation followed by exactly two newlines
+            print(char, end="\n\n")
             skip_space = True
         else:
             if skip_space and char == " ":
