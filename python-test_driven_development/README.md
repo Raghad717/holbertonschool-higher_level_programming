@@ -4,7 +4,7 @@ This repository contains Python programs and their respective tests, designed to
 
 ## Directory Structure
 
-**plaintext**
+```plaintext
 python-test_driven_development/
 ├── tests/
 │   ├── 0-add_integer.txt
