@@ -50,8 +50,3 @@ def text_indentation(text):
     lines = result.split('\n')
     for line in lines:
         print(line.strip(' '), end='' if line == lines[-1] else '\n')
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tests/5-text_indentation.txt")
