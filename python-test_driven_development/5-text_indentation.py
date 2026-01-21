@@ -6,7 +6,7 @@ Text indentation module
 
 def text_indentation(text):
     """
-    Prints a text with 2 new lines after '.', '?' and ':'.
+    Prints a text with 2 new lines after each '.', '?' and ':'.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
@@ -14,12 +14,11 @@ def text_indentation(text):
     i = 0
     n = len(text)
 
-    while i < n:
-        # Skip leading spaces
-        if text[i] == ' ' and (i == 0 or text[i - 1] in '.?:'):
-            i += 1
-            continue
+    # Skip leading spaces
+    while i < n and text[i] == ' ':
+        i += 1
 
+    while i < n:
         print(text[i], end="")
 
         if text[i] in ".?:":
