@@ -23,18 +23,27 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    result = ""
+    # Special case for empty string
+    if text == "":
+        print("", end="")
+        return
+
+    # Process character by character
     i = 0
-    n = len(text)
-
-    while i < n:
-        result += text[i]
+    length = len(text)
+    
+    while i < length:
+        # Print current character
+        print(text[i], end="")
+        
+        # If it's one of our special characters, add two newlines
         if text[i] in ".?:":
-            result += "\n\n"
+            print("\n")
+            # Skip any spaces immediately after the punctuation
             i += 1
-            while i < n and text[i] == ' ':
+            while i < length and text[i] == ' ':
                 i += 1
+            # Continue to next iteration without incrementing i again
             continue
+        
         i += 1
-
-    print(result.strip(' '), end='')
