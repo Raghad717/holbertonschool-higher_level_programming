@@ -19,34 +19,22 @@ def text_indentation(text):
 
     Returns:
         None: The function prints the formatted text.
-
-    Examples:
-        >>> text_indentation("Hello. World")
-        Hello.
-        <BLANKLINE>
-        <BLANKLINE>
-        World
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # Process the text
-    i = 0
     result = ""
-    length = len(text)
-    
-    while i < length:
+    i = 0
+    n = len(text)
+
+    while i < n:
         result += text[i]
         if text[i] in ".?:":
             result += "\n\n"
-            # Skip any spaces immediately after the punctuation
             i += 1
-            while i < length and text[i] == ' ':
+            while i < n and text[i] == ' ':
                 i += 1
             continue
         i += 1
-    
-    # Print the result without trailing spaces for each line
-    lines = result.split('\n')
-    for line in lines:
-        print(line.strip(' '), end='' if line == lines[-1] else '\n')
+
+    print(result.strip(' '), end='')
