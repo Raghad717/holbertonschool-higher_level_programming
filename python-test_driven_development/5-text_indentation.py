@@ -6,6 +6,7 @@ Text Indentation Module
 
 def text_indentation(text):
     """Print text with 2 new lines after '.', '?', ':'."""
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
@@ -13,18 +14,21 @@ def text_indentation(text):
     n = len(text)
 
     while i < n:
-        char = text[i]
+        # skip leading spaces
+        while i < n and text[i] == " ":
+            i += 1
+        if i >= n:
+            break
 
+        char = text[i]
         print(char, end="")  # print current char
 
         if char in ".?:":
-            # skip spaces after punctuation
+            print("\n\n", end="")  # 2 newlines after punctuation
             i += 1
+            # skip spaces after punctuation
             while i < n and text[i] == " ":
                 i += 1
-            # only print newlines if next char exists and is not punctuation
-            if i < n and text[i] not in ".?:\n":
-                print("\n\n", end="")
             continue
 
         i += 1
