@@ -4,7 +4,6 @@ Text Indentation Module
 Prints a text with 2 new lines after each '.', '?' or ':'.
 """
 
-
 def text_indentation(text):
     """
     Prints a text with 2 new lines after '.', '?', or ':'.
@@ -19,11 +18,16 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     skip_space = False
+    n = len(text)
 
-    for char in text:
+    for i, char in enumerate(text):
         if char in ".?:":
-            # Print punctuation followed by exactly two newlines
-            print(char, end="\n\n")
+            print(char, end="")
+            # Only add two newlines if next char exists and is not punctuation
+            if i + 1 < n and text[i + 1] not in ".?:\n":
+                print("\n\n", end="")
+            else:
+                print("", end="")  # Don't add extra newlines
             skip_space = True
         else:
             if skip_space and char == " ":
