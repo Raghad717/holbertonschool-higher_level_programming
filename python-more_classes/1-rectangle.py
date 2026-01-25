@@ -3,6 +3,7 @@
 Class Rectangle that defines a rectangle with private width and height
 """
 
+
 class Rectangle:
     """Rectangle class with width and height properties"""
 
