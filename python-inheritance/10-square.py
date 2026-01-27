@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-"""Module 10-square
-Defines class Square that inherits from Rectangle
-"""
+"""Defines a Square class that inherits from Rectangle"""
 
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Square class that inherits from Rectangle"""
+    """Represents a square"""
 
     def __init__(self, size):
         """Initialize square with size"""
@@ -17,4 +15,4 @@ class Square(Rectangle):
 
     def area(self):
         """Return the area of the square"""
-        return self.__size * self.__size
+        return self.__size ** 2
