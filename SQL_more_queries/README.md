@@ -56,7 +56,7 @@ At the end of this project, you should be able to explain:
 | `15-only_comedy.sql` | Lists only comedy shows |
 | `16-shows_by_genre.sql` | Lists all shows and their genres |
 
-## This README provides a comprehensive overview of the project, including setup instructions, file descriptions, usage guidelines, and learning resources. It's formatted to be clear and easy to navigate for anyone working with these SQL scripts.
+# This README provides a comprehensive overview of the project, including setup instructions, file descriptions, usage guidelines, and learning resources. It's formatted to be clear and easy to navigate for anyone working with these SQL scripts.
 
 ## Author
 **Raghad Almalk**
