@@ -3,8 +3,8 @@
 This repository contains SQL scripts for practicing advanced MySQL concepts, including user management, constraints, joins, subqueries, and complex data retrieval techniques.
 
 ## Table of Contents
-- [Learning Objectives]
-- [Requirements]
+- [Learning Objectives](#learning-objectives)
+- [Requirements](#requirements)
 - [Project Files](#project-files)
 
 
